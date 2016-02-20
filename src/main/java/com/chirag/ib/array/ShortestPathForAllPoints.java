@@ -80,6 +80,22 @@ public class ShortestPathForAllPoints
 	}
 	
 	
+	private int coverPoints(ArrayList<Integer> x, ArrayList<Integer> y)
+	{
+		if(x.size()!=y.size() || x.size()==0 || y.size()==0)
+			return -1;
+		
+		Integer[] xCo = x.toArray(new Integer[0]);
+		Integer[] yCo = y.toArray(new Integer[0]);
+		int totalDist = 0;
+		
+		for(int i=1; i<xCo.length; i++)
+			totalDist += Math.max(Math.abs(xCo[i]-xCo[i-1]), Math.abs(yCo[i]-yCo[i-1]));
+		
+		return totalDist;
+	}
+	
+	
 	public static void main(String[] args)
 	{
 		ArrayList<Integer> x = new ArrayList<Integer>();
@@ -92,6 +108,7 @@ public class ShortestPathForAllPoints
 		y.add(4); y.add(-15); y.add(-10); y.add(-3); y.add(-13); y.add(12); y.add(8); y.add(-8);
 		
 		ShortestPathForAllPoints obj = new ShortestPathForAllPoints();
+		System.out.println(obj.coverPoints(x, y));
 		System.out.println(obj.findShortestDistForPoints(x, y));
 	}
 }
