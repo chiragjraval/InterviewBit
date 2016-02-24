@@ -2,6 +2,8 @@ package com.chirag.ib.array;
 
 import java.util.ArrayList;
 
+import com.chirag.ib.util.ArrayUtil;
+
 public class PositiveMaxSumSubArrayProblem
 {
 	static class MaxSumSubArray implements Comparable<MaxSumSubArray>
@@ -85,18 +87,6 @@ public class PositiveMaxSumSubArrayProblem
 		return output;
 	}
 	
-	
-	public void printList(ArrayList<Integer> a)
-	{
-		System.out.print("\nNumber = [");
-		for (int i=0; i<a.size(); i++)
-		{
-			System.out.print(a.get(i));
-			if(i<a.size()-1) System.out.print(", ");
-		}
-		System.out.print("]");
-	}
-	
 	public static void main(String[] args)
 	{
 		PositiveMaxSumSubArrayProblem obj = new PositiveMaxSumSubArrayProblem();
@@ -104,42 +94,42 @@ public class PositiveMaxSumSubArrayProblem
 		ArrayList<Integer> a = new ArrayList<Integer>();
 		a.add(1); a.add(2); a.add(5); a.add(-7); a.add(2); a.add(3);
 		ArrayList<Integer> output = obj.maxset(a);
-		obj.printList(output);
+		ArrayUtil.printList(output);
 		
 		a = new ArrayList<Integer>();
 		a.add(1); a.add(2); a.add(5); a.add(-7); a.add(2); a.add(2); a.add(4);
 		output = obj.maxset(a);
-		obj.printList(output);
+		ArrayUtil.printList(output);
 		
 		a = new ArrayList<Integer>();
 		a.add(-1);
 		output = obj.maxset(a);
-		obj.printList(output);
+		ArrayUtil.printList(output);
 		
 		a = new ArrayList<Integer>();
 		a.add(-1); a.add(1); a.add(2); a.add(5); a.add(-1); a.add(2); a.add(2); a.add(4); a.add(-1);
 		output = obj.maxset(a);
-		obj.printList(output);
+		ArrayUtil.printList(output);
 		
 		a = new ArrayList<Integer>();
 		a.add(-1); a.add(1); a.add(2); a.add(5); a.add(-1); a.add(2); a.add(2); a.add(5); a.add(-1);
 		output = obj.maxset(a);
-		obj.printList(output);
+		ArrayUtil.printList(output);
 		
 		a = new ArrayList<Integer>();
 		a.add(0); a.add(0); a.add(-1); a.add(0);
 		output = obj.maxset(a);
-		obj.printList(output);
+		ArrayUtil.printList(output);
 		
 		a = new ArrayList<Integer>();
 		a.add(1); a.add(2); a.add(-1); a.add(-1);
 		output = obj.maxset(a);
-		obj.printList(output);
+		ArrayUtil.printList(output);
 		
 		a = new ArrayList<Integer>();
 		a.add(1967513926); a.add(1540383426); a.add(-1303455736); a.add(-521595368);
 		output = obj.maxset(a);
-		obj.printList(output);
+		ArrayUtil.printList(output);
 	}
 
 }

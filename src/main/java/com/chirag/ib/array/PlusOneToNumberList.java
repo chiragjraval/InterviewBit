@@ -2,6 +2,8 @@ package com.chirag.ib.array;
 
 import java.util.ArrayList;
 
+import com.chirag.ib.util.ArrayUtil;
+
 public class PlusOneToNumberList
 {
 	public ArrayList<Integer> removeLeadingZeros(ArrayList<Integer> a)
@@ -36,15 +38,6 @@ public class PlusOneToNumberList
 		return output;
 	}
 	
-	public void printList(ArrayList<Integer> a)
-	{
-		System.out.print("\nNumber = [");
-		for (Integer integer : a) {
-			System.out.print(integer + ", ");
-		}
-		System.out.print("]");
-	}
-	
 	public static void main(String[] args)
 	{
 		PlusOneToNumberList obj = new PlusOneToNumberList();
@@ -52,33 +45,32 @@ public class PlusOneToNumberList
 		ArrayList<Integer> a = new ArrayList<Integer>();
 		a.add(1); a.add(2); a.add(3);
 		ArrayList<Integer> output = obj.plusOne(a);
-		obj.printList(output);
+		ArrayUtil.printList(output);
 		
 		a = new ArrayList<Integer>();
 		a.add(0); a.add(0); a.add(1); a.add(2); a.add(3);
 		output = obj.plusOne(a);
-		obj.printList(output);
-		
+		ArrayUtil.printList(output);
 		
 		a = new ArrayList<Integer>();
 		a.add(0); a.add(0); a.add(0); a.add(0); a.add(0);
 		output = obj.plusOne(a);
-		obj.printList(output);
+		ArrayUtil.printList(output);
 		
 		a = new ArrayList<Integer>();
 		a.add(3); a.add(0); a.add(4); a.add(6); a.add(0);
 		output = obj.plusOne(a);
-		obj.printList(output);
+		ArrayUtil.printList(output);
 		
 		a = new ArrayList<Integer>();
 		a.add(3); a.add(0); a.add(4); a.add(6); a.add(0);
 		output = obj.plusOne(a);
-		obj.printList(output);
+		ArrayUtil.printList(output);
 		
 		a = new ArrayList<Integer>();
 		a.add(9); a.add(9); a.add(9); a.add(9); a.add(9);
 		output = obj.plusOne(a);
-		obj.printList(output);
+		ArrayUtil.printList(output);
 	}
 
 }

@@ -2,6 +2,8 @@ package com.chirag.ib.array;
 
 import java.util.ArrayList;
 
+import com.chirag.ib.util.ArrayUtil;
+
 public class PascalTriangleRowProblem
 {
 	public ArrayList<Integer> getRow(int a)
@@ -22,37 +24,26 @@ public class PascalTriangleRowProblem
 		return output;
 	}
 	
-	public void printList(ArrayList<Integer> a)
-	{
-		System.out.print("\nNumber = [");
-		for (int i=0; i<a.size(); i++)
-		{
-			System.out.print(a.get(i));
-			if(i<a.size()-1) System.out.print(", ");
-		}
-		System.out.print("]");
-	}
-	
 	public static void main(String[] args)
 	{
 		PascalTriangleRowProblem obj = new PascalTriangleRowProblem();
 		
 		ArrayList<Integer> output = obj.getRow(5);
-		obj.printList(output);
+		ArrayUtil.printList(output);
 		
 		output = obj.getRow(6);
-		obj.printList(output);
+		ArrayUtil.printList(output);
 		
 		output = obj.getRow(7);
-		obj.printList(output);
+		ArrayUtil.printList(output);
 		
 		output = obj.getRow(8);
-		obj.printList(output);
+		ArrayUtil.printList(output);
 		
 		output = obj.getRow(9);
-		obj.printList(output);
+		ArrayUtil.printList(output);
 		
 		output = obj.getRow(10);
-		obj.printList(output);
+		ArrayUtil.printList(output);
 	}
 }
