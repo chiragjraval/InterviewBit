@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ArrayUtil
 {
-	public static void printList(ArrayList<Integer> a)
+	public static <T extends Object> void printList(ArrayList<T> a)
 	{
 		System.out.print("\n[");
 		for (int i=0; i<a.size(); i++)

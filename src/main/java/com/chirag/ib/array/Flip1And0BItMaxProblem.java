@@ -45,6 +45,64 @@ public class Flip1And0BItMaxProblem {
 		final char CHAR1 = '1'; 
 		char[] a = A.toCharArray();
 		
+		MaxDiffSubArray result, currSubArray;
+		
+		int idx = 0;
+		
+		if(a[idx]==CHAR1)
+		{
+			result = new MaxDiffSubArray(idx, idx, -1);
+			currSubArray = new MaxDiffSubArray(idx, idx, -1);
+		}
+		else
+		{
+			result = new MaxDiffSubArray(idx, idx, 1);
+			currSubArray = new MaxDiffSubArray(idx, idx, 1);
+		}
+		
+		idx++;
+		
+		while(idx<a.length)
+		{
+			if(currSubArray.diff<0)
+			{
+				currSubArray.startIndex = idx;
+				currSubArray.endIndex = idx;
+			}
+			else
+			{
+				currSubArray.endIndex++;
+			}
+			
+			if(a[idx]==CHAR1)
+				currSubArray.diff--;
+			else
+				currSubArray.diff++;
+			
+			if(result.compareTo(currSubArray) < 0)
+				result = currSubArray.clone();
+			
+			idx++;
+		}
+		
+		if(result.compareTo(currSubArray) < 0)
+			result = currSubArray.clone();
+		
+		if(result.diff<0)
+			return new ArrayList<Integer>();
+		
+		ArrayList<Integer> output = new ArrayList<Integer>(2);
+		output.add(result.startIndex+1);
+		output.add(result.endIndex+1);
+		
+		return output;
+	}
+	
+	/*public ArrayList<Integer> flip(String A)
+	{
+		final char CHAR1 = '1'; 
+		char[] a = A.toCharArray();
+		
 		if(a==null || a.length==0)
 			return new ArrayList<Integer>();
 		
@@ -87,8 +145,8 @@ public class Flip1And0BItMaxProblem {
 				result = currSubArray.clone();
 		}
 		
-		if(result.compareTo(currSubArray) < 0)
-			result = currSubArray.clone();
+		//if(result.compareTo(currSubArray) < 0)
+			//result = currSubArray.clone();
 		
 		if(result.diff<0)
 			return new ArrayList<Integer>();
@@ -98,7 +156,7 @@ public class Flip1And0BItMaxProblem {
 		output.add(result.endIndex+1);
 		
 		return output;
-    }
+    }*/
 	
 	public static void main(String[] args)
 	{
