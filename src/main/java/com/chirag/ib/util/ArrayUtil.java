@@ -14,4 +14,15 @@ public class ArrayUtil
 		}
 		System.out.print("]");
 	}
+	
+	public static <T extends Object> void printList(ArrayList<T> a, int startIdx, int endIdx)
+	{
+		System.out.print("\n[");
+		for (int i=startIdx; i<=endIdx; i++)
+		{
+			System.out.print(a.get(i));
+			if(i<a.size()-1) System.out.print(", ");
+		}
+		System.out.print("]");
+	}
 }
